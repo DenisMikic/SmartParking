@@ -10,22 +10,22 @@ using web.Models;
 
 namespace web.Controllers
 {
-    public class TimeController : Controller
+    public class BusController : Controller
     {
         private readonly ParkingContext _context;
 
-        public TimeController(ParkingContext context)
+        public BusController(ParkingContext context)
         {
             _context = context;
         }
 
-        // GET: Time
+        // GET: Bus
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Time.ToListAsync());
+            return View(await _context.Bus.ToListAsync());
         }
 
-        // GET: Time/Details/5
+        // GET: Bus/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace web.Controllers
                 return NotFound();
             }
 
-            var time = await _context.Time
-                .FirstOrDefaultAsync(m => m.TimeID == id);
-            if (time == null)
+            var bus = await _context.Bus
+                .FirstOrDefaultAsync(m => m.BusID == id);
+            if (bus == null)
             {
                 return NotFound();
             }
 
-            return View(time);
+            return View(bus);
         }
 
-        // GET: Time/Create
+        // GET: Bus/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Time/Create
+        // POST: Bus/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TimeID,Arrival,Departure")] Time time)
+        public async Task<IActionResult> Create([Bind("BusID,BusName,Passengers,DateCreated,DateEdited")] Bus bus)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(time);
+                _context.Add(bus);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(time);
+            return View(bus);
         }
 
-        // GET: Time/Edit/5
+        // GET: Bus/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +73,22 @@ namespace web.Controllers
                 return NotFound();
             }
 
-            var time = await _context.Time.FindAsync(id);
-            if (time == null)
+            var bus = await _context.Bus.FindAsync(id);
+            if (bus == null)
             {
                 return NotFound();
             }
-            return View(time);
+            return View(bus);
         }
 
-        // POST: Time/Edit/5
+        // POST: Bus/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("TimeID,Arrival,Departure")] Time time)
+        public async Task<IActionResult> Edit(int id, [Bind("BusID,BusName,Passengers,DateCreated,DateEdited")] Bus bus)
         {
-            if (id != time.TimeID)
+            if (id != bus.BusID)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace web.Controllers
             {
                 try
                 {
-                    _context.Update(time);
+                    _context.Update(bus);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!TimeExists(time.TimeID))
+                    if (!BusExists(bus.BusID))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(time);
+            return View(bus);
         }
 
-        // GET: Time/Delete/5
+        // GET: Bus/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +124,30 @@ namespace web.Controllers
                 return NotFound();
             }
 
-            var time = await _context.Time
-                .FirstOrDefaultAsync(m => m.TimeID == id);
-            if (time == null)
+            var bus = await _context.Bus
+                .FirstOrDefaultAsync(m => m.BusID == id);
+            if (bus == null)
             {
                 return NotFound();
             }
 
-            return View(time);
+            return View(bus);
         }
 
-        // POST: Time/Delete/5
+        // POST: Bus/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var time = await _context.Time.FindAsync(id);
-            _context.Time.Remove(time);
+            var bus = await _context.Bus.FindAsync(id);
+            _context.Bus.Remove(bus);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool TimeExists(int id)
+        private bool BusExists(int id)
         {
-            return _context.Time.Any(e => e.TimeID == id);
+            return _context.Bus.Any(e => e.BusID == id);
         }
     }
 }

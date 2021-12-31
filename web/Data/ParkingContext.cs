@@ -13,7 +13,7 @@ namespace web.Data
         public DbSet<Car> Car { get; set; }
         public DbSet<Enrollment> Enrollments { get; set; }
         public DbSet<User> User { get; set; }
-         public DbSet<Time> Time { get; set; }
+        public DbSet<Bus> Bus {get;set;}
         public DbSet<Spot> Spot { get; set; }
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -23,7 +23,7 @@ namespace web.Data
             modelBuilder.Entity<Enrollment>().ToTable("enrollment");
             modelBuilder.Entity<User>().ToTable("user");
             modelBuilder.Entity<Spot>().ToTable("spot");
-            modelBuilder.Entity<Time>().ToTable("time");
+            modelBuilder.Entity<Bus>().ToTable("bus");
         }
     }
 }

@@ -42,6 +42,19 @@ namespace web.Data
             }
             context.SaveChanges();
 
+            var bus = new Bus[]
+            {
+            new Bus{BusID=1,BusName="Meteor",Passengers=54},
+            new Bus{BusID=2,BusName="Arriva",Passengers=33},
+            new Bus{BusID=3,BusName="LPP",Passengers=20},
+            new Bus{BusID=4,BusName="Alpetour",Passengers=100},
+            };
+            foreach (Bus b in bus)
+            {
+                context.Bus.Add(b);
+            }
+            context.SaveChanges();
+
             var spot = new Spot[]
             {
             new Spot{SpotID=1,SpotNumber=4,SpotName="Zivalski vrt"},
@@ -55,25 +68,14 @@ namespace web.Data
             }
             context.SaveChanges();
 
-            var time = new Time[]
-            {
-            new Time{TimeID=1,Arrival=DateTime.Parse("2005-09-01"),Departure=DateTime.Parse("2005-09-02")},
-            new Time{TimeID=2,Arrival=DateTime.Parse("2005-09-03"),Departure=DateTime.Parse("2005-09-04")},
-            new Time{TimeID=3,Arrival=DateTime.Parse("2005-09-05"),Departure=DateTime.Parse("2005-09-06")},
-            new Time{TimeID=4,Arrival=DateTime.Parse("2005-09-07"),Departure=DateTime.Parse("2005-09-08")},
-            };
-            foreach (Time c in time)
-            {
-                context.Time.Add(c);
-            }
-            context.SaveChanges();
+            
 
             var enrollments = new Enrollment[]
             {
-            new Enrollment{UserID=1,CarID=1,SpotID=1,TimeID=1},
-            new Enrollment{UserID=2,CarID=2,SpotID=2,TimeID=2},
-            new Enrollment{UserID=3,CarID=3,SpotID=3,TimeID=3},
-            new Enrollment{UserID=4,CarID=4,SpotID=4,TimeID=4},
+            new Enrollment{UserID=1,CarID=1,SpotID=1},
+            new Enrollment{UserID=2,CarID=2,SpotID=2},
+            new Enrollment{UserID=3,CarID=3,SpotID=3},
+            new Enrollment{UserID=4,CarID=4,SpotID=4},
             
             };
             foreach (Enrollment e in enrollments)

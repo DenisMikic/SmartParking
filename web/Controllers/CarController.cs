@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace web.Controllers
 {
-    [Authorize]
+    
     public class CarController : Controller
     {
         

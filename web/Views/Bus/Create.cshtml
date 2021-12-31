@@ -1,0 +1,50 @@
+@model web.Models.Bus
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Bus</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BusID" class="control-label"></label>
+                <input asp-for="BusID" class="form-control" />
+                <span asp-validation-for="BusID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BusName" class="control-label"></label>
+                <input asp-for="BusName" class="form-control" />
+                <span asp-validation-for="BusName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Passengers" class="control-label"></label>
+                <input asp-for="Passengers" class="form-control" />
+                <span asp-validation-for="Passengers" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateCreated" class="control-label"></label>
+                <input asp-for="DateCreated" class="form-control" />
+                <span asp-validation-for="DateCreated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateEdited" class="control-label"></label>
+                <input asp-for="DateEdited" class="form-control" />
+                <span asp-validation-for="DateEdited" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
