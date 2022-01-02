@@ -67,7 +67,7 @@ namespace web.Controllers
             {
                 car.DateCreated = DateTime.Now;
                 car.DateEdited = DateTime.Now;
-                car.Owner = currentUser;
+                
 
                 _context.Add(car);
                 await _context.SaveChangesAsync();

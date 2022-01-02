@@ -14,7 +14,7 @@ namespace web.Models
         public DateTime? DateCreated {get;set;}
 
         public DateTime? DateEdited {get;set;}
-        public ApplicationUser? Owner {get;set;}
+        
 
         public ICollection<Enrollment> Enrollments { get; set; }
     }
