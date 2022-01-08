@@ -7,10 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using web.Data;
 using web.Models;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace web.Controllers
-{
+{[Authorize]
     public class SpotController : Controller
     {
         private readonly ParkingContext _context;
@@ -67,6 +68,7 @@ namespace web.Controllers
         }
 
         // GET: Spot/Edit/5
+        
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -87,6 +89,7 @@ namespace web.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        
         public async Task<IActionResult> Edit(int id, [Bind("SpotID,SpotNumber,SpotName")] Spot spot)
         {
             if (id != spot.SpotID)
@@ -118,6 +121,7 @@ namespace web.Controllers
         }
 
         // GET: Spot/Delete/5
+       
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

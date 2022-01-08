@@ -10,7 +10,7 @@ using web.Models;
 using Microsoft.AspNetCore.Authorization;
 
 namespace web.Controllers
-{
+{[Authorize]
     public class ParkingController : Controller
     {
         private readonly ParkingContext _context;
@@ -27,7 +27,7 @@ namespace web.Controllers
         }
 
         // GET: Parking/Details/5
-        [Authorize]
+        
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -46,7 +46,7 @@ namespace web.Controllers
         }
 
         // GET: Parking/Create
-        [Authorize]
+        
         public IActionResult Create()
         {
             return View();
@@ -57,7 +57,7 @@ namespace web.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize]
+        
         public async Task<IActionResult> Create([Bind("ID,Name,Surname")] User user)
         {
             if (ModelState.IsValid)
@@ -122,7 +122,7 @@ namespace web.Controllers
         }
 
         // GET: Parking/Delete/5
-        [Authorize(Roles = "Administrator")]
+        
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
