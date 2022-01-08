@@ -22,7 +22,7 @@ Posnetki zaslona:
 ![image](https://user-images.githubusercontent.com/75980791/148654387-0e5e2aca-3ff5-40e2-a655-ac6ad0beed8a.png)
 ![image](https://user-images.githubusercontent.com/75980791/148654397-5bab200a-dcf6-45f6-9f19-6bab59466b35.png)
 ![image](https://user-images.githubusercontent.com/75980791/148654415-508c2e12-d794-4ca8-b5fc-4d8d35334503.png)
-![image](https://user-images.githubusercontent.com/75980791/148654442-8670aa3b-10d7-492e-b4fb-2f39ef142f0f.png)
+![image](https://user-images.githubusercontent.com/75980791/148655430-2931aa8e-0c3f-41a1-8ff1-1e2a6936b2ca.png)
 ![image](https://user-images.githubusercontent.com/75980791/148654471-c118f709-9029-40fc-8523-ffaee818444a.png)
 ![image](https://user-images.githubusercontent.com/75980791/148654474-165eb437-0d58-452f-92d1-2a007e904deb.png)
 
