@@ -17,3 +17,6 @@ parkirno mesto sprosti. V primeru, da bi bilo beleženje registerskih številk p
 avtomobili beležili z IDji. 
 
 Predvidene entitete: registrska (id avtomobila), čas prihoda, čas odhoda, kapaciteta parkirišča.
+
+![image](https://user-images.githubusercontent.com/75980791/148654387-0e5e2aca-3ff5-40e2-a655-ac6ad0beed8a.png)
+
